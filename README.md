@@ -33,6 +33,7 @@
 Note: All routes shall be prefixed with the default API url (`http://localhost:3000/api`)
 
 | Route | Method | Description | Params | Response |
+|---|---|---|---|---|
 | /list | GET | Fetches all the todo tasks from the database | None | Array of task objects |
 | /create | POST | Creates a new task | `content` - The body/text of new task | Newly created task object |
 | /mark_done | POST | Sets the `done` status of a task | `item_id` - Mongo ID of the task, `is_done` - new status | Modified task object |
