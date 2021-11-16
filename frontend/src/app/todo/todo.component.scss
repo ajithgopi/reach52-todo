@@ -1,0 +1,86 @@
+.container {
+    padding: 20px;
+    background-color: white;
+    width: calc(90% - 40px);
+    max-width: 500px;
+    display: inline-block;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #6d707e;
+        .left-pane {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            .date-text {
+                font-size: 36px;
+                font-weight: 700;
+            }
+            .month-text {
+                margin-left: 5px;
+                font-size: 13px;
+                line-height: 1rem;
+                text-align: left;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+        }
+        .right-pane {
+            flex-grow: 1;
+            display: flex;
+            font-size: 14px;
+            font-weight: 600;
+            flex-direction: column;
+            align-items: flex-end;
+            line-height: 1rem;
+            .title {
+                text-transform: uppercase;
+            }
+        }
+    }
+    .add-area {
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .text-input {
+            flex-grow: 1;
+            padding: 12px 20px;
+            border: 2px solid #dddcdc;
+            border-radius: 4px 0 0 4px;
+            border-radius: 50px;
+            outline: none;
+            &:focus {
+                background-color: #f8f8f8;
+            }
+        }
+        .add-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #96daaa;
+            color: #187c36;
+            border: 2px solid #76b98a;
+            border-radius: 50px;
+            margin-left: 5px;
+            transition: background-color .3s ease;
+            &:hover {
+                background-color: #83cf9a;
+            }
+            &.disabled {
+                background-color: #cecece;
+                color: #aaaaaa;
+                border: 2px solid #bebebe;
+            }
+        }
+    }
+    .list-area {
+        margin-top: 10px;
+        .no-items-found {
+            text-align: center;
+            color: #888;
+        }
+    }
+}

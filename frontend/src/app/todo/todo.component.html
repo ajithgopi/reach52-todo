@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="header">
+        <div class="left-pane">
+            <span class="date-text">{{ date.format("DD") }}</span>
+            <div class="month-text">
+                <div>{{ date.format("MMMM") }}</div>
+                <div>{{ date.format("YYYY") }}</div>
+            </div>
+        </div>
+        <div class="right-pane">
+            <span class="title">{{ date.format("dddd") }}</span>
+            <span>{{ date.format("LTS") }}</span>
+        </div>
+    </div>
+    <div class="add-area">
+        <input type="text" class="text-input" placeholder="Create new task..." [(ngModel)]="newitemName" (keydown.enter)="addItem()" />
+        <a (click)="addItem()" class="add-button" [class.disabled]="isSaving">
+            <span *ngIf="!isSaving">Add</span>
+            <sa-spinner-circular [enabled]="isSaving" size="14" сolor="#17b546" secondaryColor="#cfcfcf"></sa-spinner-circular>
+        </a>
+    </div>
+
+    <sa-spinner-circular [enabled]="!hasLoaded" сolor="#17b546" secondaryColor="#cfcfcf"></sa-spinner-circular>
+
+    <div class="list-area">
+        <app-todo-item *ngFor="let item of items" [item]="item" [onRemove]="onRemoveItem" [onToggle]="onToggleDone"></app-todo-item>
+        <div class="no-items-found" *ngIf="items.length==0 && hasLoaded">No tasks found! Please try add new tasks above</div>
+    </div>
+</div>

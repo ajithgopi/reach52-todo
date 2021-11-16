@@ -1,0 +1,12 @@
+<div class="item-wrapper" *ngIf="item">
+    <div class="content">{{ item.content }}</div>
+    <div class="right-pane">
+        <div class="delete-icon-wrapper" (click)="onRemove(item._id)">
+            <mat-icon inline="true">delete</mat-icon>
+        </div>
+        <div>
+            <input type="checkbox" [checked]="item.is_done" id="check_{{ item._id }}" (change)="onToggle(item._id, !item.is_done)" name="check" value="" />
+            <label for="check_{{ item._id }}"><span></span></label>
+        </div>
+    </div>
+</div>
